@@ -47,7 +47,7 @@ public class Contents{
     static int indexOfList = 0;
 
 
-
+//Sample coment
     public Contents(){
 
         label.setText("24 Game");
