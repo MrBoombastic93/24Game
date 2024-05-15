@@ -20,9 +20,12 @@ public class Contents{
     static JPanel panel3 = new JPanel();
 
 
-    static Font myFontTitle = new Font("Ink Free", Font.BOLD, 40);
+    static Font myFontTitle = new Font("Liberation Sans", Font.BOLD, 40);
 
-    static Font myFontTextField = new Font("Ink Free", Font.BOLD, 30);
+    static Font myFontTextField = new Font("Liberation Sans", Font.BOLD, 30);
+
+    static Font opAndNum = new Font("Liberation Sans", Font.BOLD, 20);
+
 
 
 
@@ -49,7 +52,7 @@ public class Contents{
 
         label.setText("24 Game");
         label.setFont(myFontTitle);
-        label.setBounds(180, 50, 250, 50);
+        label.setBounds(220, 50, 250, 50);
 
 
         panel1.setLayout(new GridLayout(1, 2, 10, 10));
@@ -62,6 +65,11 @@ public class Contents{
         minusButton.setEnabled(false);
         multiplyButton.setEnabled(false);
         divideButton.setEnabled(false);
+
+        plusButton.setFont(opAndNum);
+        minusButton.setFont(opAndNum);
+        multiplyButton.setFont(opAndNum);
+        divideButton.setFont(opAndNum);
 
 
         panel2.setLayout(new GridLayout(1, 4, 10, 10));
@@ -79,6 +87,10 @@ public class Contents{
         randomNumber2 = new JButton(String.valueOf(getRandomNumbers().get(indexOfList).get(1).intValue()));
         randomNumber3 = new JButton(String.valueOf(getRandomNumbers().get(indexOfList).get(2).intValue()));
         randomNumber4 = new JButton(String.valueOf(getRandomNumbers().get(indexOfList).get(3).intValue()));
+        randomNumber1.setFont(opAndNum);
+        randomNumber2.setFont(opAndNum);
+        randomNumber3.setFont(opAndNum);
+        randomNumber4.setFont(opAndNum);
         panel3.add(randomNumber1);
         panel3.add(randomNumber2);
         panel3.add(randomNumber3);

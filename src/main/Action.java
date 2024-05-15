@@ -238,6 +238,7 @@ public class Action implements ActionListener {
                 result = 0;
                 num = 0;
                 textField.setText("0");
+                numbersToUse = 4;
             }
 
         }
