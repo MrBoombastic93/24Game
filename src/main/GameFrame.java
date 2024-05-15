@@ -12,10 +12,11 @@ public class GameFrame {
 
     public GameFrame() {
 
-        frame = new JFrame("Jogo do 24");
-        frame.setSize(600, 650);
+        frame = new JFrame("24 Game");
+        frame.setSize(620, 680);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
+        frame.setResizable(false);
 
 
         frame.add(label);

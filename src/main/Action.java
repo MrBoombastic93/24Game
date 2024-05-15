@@ -29,8 +29,7 @@ public class Action implements ActionListener {
         divideButton.addActionListener(this);
         multiplyButton.addActionListener(this);
 
-        equal.addActionListener(this);
-        clear.addActionListener(this);
+        retry.addActionListener(this);
         nextSequence.addActionListener(this);
     }
 
@@ -40,6 +39,7 @@ public class Action implements ActionListener {
 
 
         if (e.getSource() == randomNumber1) {
+            textField.setText("");
 
             plusButton.setEnabled(true);
             minusButton.setEnabled(true);
@@ -59,11 +59,17 @@ public class Action implements ActionListener {
                     case '*' -> result *= num;
                     case '/' -> result /= num;
                 }
-                textField.setText(String.valueOf(result));
+                textField.setText(String.valueOf((int)result));
+            }
+            if (result == 24 && numbersToUse == 0) {
+                textField.setText((int)result + "! Got it!");
+            } else if(numbersToUse == 0) {
+                textField.setText((int)result + "... you missed, try again!");
             }
         }
 
         if (e.getSource() == randomNumber2) {
+            textField.setText("");
 
             plusButton.setEnabled(true);
             minusButton.setEnabled(true);
@@ -83,11 +89,17 @@ public class Action implements ActionListener {
                     case '*' -> result *= num;
                     case '/' -> result /= num;
                 }
-                textField.setText(String.valueOf(result));
+                textField.setText(String.valueOf((int)result));
+            }
+            if (result == 24 && numbersToUse == 0) {
+                textField.setText((int)result + "! Got it!");
+            } else if(numbersToUse == 0) {
+                textField.setText((int)result + "... you missed, try again!");
             }
         }
 
         if (e.getSource() == randomNumber3) {
+            textField.setText("");
 
             plusButton.setEnabled(true);
             minusButton.setEnabled(true);
@@ -107,11 +119,17 @@ public class Action implements ActionListener {
                     case '*' -> result *= num;
                     case '/' -> result /= num;
                 }
-                textField.setText(String.valueOf(result));
+                textField.setText(String.valueOf((int)result));
+            }
+            if (result == 24 && numbersToUse == 0) {
+                textField.setText((int)result + "! Got it!");
+            } else if(numbersToUse == 0) {
+                textField.setText((int)result + "... you missed, try again!");
             }
         }
 
         if (e.getSource() == randomNumber4) {
+            textField.setText("");
 
             plusButton.setEnabled(true);
             minusButton.setEnabled(true);
@@ -131,7 +149,12 @@ public class Action implements ActionListener {
                     case '*' -> result *= num;
                     case '/' -> result /= num;
                 }
-                textField.setText(String.valueOf(result));
+                textField.setText(String.valueOf((int)result));
+            }
+            if (result == 24 && numbersToUse == 0) {
+                textField.setText((int)result + "! Got it!");
+            } else if(numbersToUse == 0) {
+                textField.setText((int)result + "... you missed, try again!");
             }
         }
 
@@ -188,16 +211,10 @@ public class Action implements ActionListener {
             operator = '/';
         }
 
-        if (e.getSource() == equal) {
-            if (result == 24 && numbersToUse == 0) {
-                textField.setText(result + "! Acertou!");
-            } else {
-                textField.setText(result + "... errou, tente outra vez!");
-            }
-        }
 
-            if (e.getSource() == clear) {
-                textField.setText("");
+
+            if (e.getSource() == retry) {
+                textField.setText("0");
                 randomNumber1.setEnabled(true);
                 randomNumber2.setEnabled(true);
                 randomNumber3.setEnabled(true);
@@ -217,6 +234,10 @@ public class Action implements ActionListener {
                 randomNumber2.setEnabled(true);
                 randomNumber3.setEnabled(true);
                 randomNumber4.setEnabled(true);
+
+                result = 0;
+                num = 0;
+                textField.setText("0");
             }
 
         }
