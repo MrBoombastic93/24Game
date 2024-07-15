@@ -8,8 +8,7 @@ import static main.Contents.*;
 public class GameFrame {
 
     static JFrame frame;
-
-    //Just a comment
+    
 
     public GameFrame() {
 
